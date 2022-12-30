@@ -19,20 +19,4 @@
                                                     FormJenisBarang.JenisBarang.GSSatuan)
         Me.Close()
     End Sub
-
-    Private Sub ComboBoxSatuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxSatuan.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub LabelSatuan_Click(sender As Object, e As EventArgs) Handles LabelSatuan.Click
-
-    End Sub
-
-    Private Sub LabelJenisBarang_Click(sender As Object, e As EventArgs) Handles LabelJenisBarang.Click
-
-    End Sub
-
-    Private Sub TextBoxJenisBarang_TextChanged(sender As Object, e As EventArgs) Handles TextBoxJenisBarang.TextChanged
-
-    End Sub
 End Class

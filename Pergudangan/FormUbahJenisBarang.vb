@@ -10,8 +10,9 @@
         ComboBoxSatuan.DataSource = satuan
         Dim JenisBarang = FormJenisBarang.JenisBarang
         TextBoxJenisBarang.Text = FormJenisBarang.JenisBarang.GSJenis_Barang
-        ComboBoxSatuan.Text = FormJenisBarang.JenisBarang.GSSatuan
+        ComboBoxSatuan.SelectedItem() = FormJenisBarang.JenisBarang.GSSatuan
     End Sub
+
     Private Sub ButtonUbah_Click(sender As Object, e As EventArgs) Handles ButtonUbah.Click
         FormJenisBarang.JenisBarang.GSJenis_Barang = TextBoxJenisBarang.Text
         FormJenisBarang.JenisBarang.GSSatuan = ComboBoxSatuan.SelectedItem()

@@ -41,7 +41,6 @@
 
     Private Sub ButtonUbah_Click(sender As Object, e As EventArgs) Handles ButtonUbah.Click
         Dim selectedJenis As List(Of String) = JenisBarang.GetDataJenisBarangByIDDatabase(SelectedTableJenis)
-        Dim selectedJenis As List(Of String) = JenisBarang.GetDataJenisBarangByIDDatabase(SelectedTableJenis)
         JenisBarang.GSJenis_Barang = selectedJenis(1)
         JenisBarang.GSSatuan = selectedJenis(2)
 

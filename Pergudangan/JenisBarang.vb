@@ -81,10 +81,9 @@ Public Class JenisBarang
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlQuery = "UPDATE jenisbarang SET " &
-                        "jenis_barang = '" & jenis_barang & "',  " &
-                        "satuan = '" & satuan & "',  " &
-                        "WHERE id_jenis_barang= '" & id & "'"
-
+                    "jenis_barang='" & jenis_barang & "', " &
+                    "satuan='" & satuan & "' " &
+                    "WHERE id_jenis_barang='" & id & "'"
         Debug.Print(sqlQuery)
 
         sqlCommand = New MySqlCommand(sqlQuery, dbConn)
