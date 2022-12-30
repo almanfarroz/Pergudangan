@@ -9,7 +9,7 @@
         LabelNama.Text = FormJenisBarang.SelectedTableJenisBarang
     End Sub
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
-        FormJenisBarang.JenisBarang.DeleteDataKoleksiByIDDatabase(FormJenisBarang.SelectedTableJenis)
+        FormJenisBarang.JenisBarang.DeleteDataJenisBarangByIDDatabase(FormJenisBarang.SelectedTableJenis)
         Me.Close()
     End Sub
 End Class

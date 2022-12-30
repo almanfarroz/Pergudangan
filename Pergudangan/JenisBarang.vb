@@ -13,6 +13,7 @@ Public Class JenisBarang
     Private username As String = "root"
     Private password As String = ""
     Private database As String = "pergudangan"
+
     Public Property GSSatuan As String
         Get
             Return satuan
@@ -47,7 +48,7 @@ Public Class JenisBarang
         satuan = ""
     End Sub
 
-    Public Function AddDataKoleksiDatabase(jenis_barang As String,
+    Public Function AddDataJenisBarangDatabase(jenis_barang As String,
                                         satuan As String)
         Dim result As New DataTable
 
@@ -70,7 +71,7 @@ Public Class JenisBarang
         End Try
     End Function
 
-    Public Function UpdateDataKoleksiByIdDatabase(id As Integer,
+    Public Function UpdateDataJenisBarangByIdDatabase(id As Integer,
                                         jenis_barang As String,
                                         satuan As String)
 
@@ -80,9 +81,9 @@ Public Class JenisBarang
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlQuery = "UPDATE jenisbarang SET " &
-                    "jenis_barang='" & jenis_barang & "', " &
-                    "satuan='" & satuan & "', " &
-                    "WHERE id_jenis_barang='" & id & "'"
+                        "jenis_barang = '" & jenis_barang & "',  " &
+                        "satuan = '" & satuan & "',  " &
+                        "WHERE id_jenis_barang= '" & id & "'"
 
         Debug.Print(sqlQuery)
 
@@ -92,14 +93,14 @@ Public Class JenisBarang
         sqlRead.Close()
         dbConn.Close()
         'Catch ex As Exception
-        '    Return ex.Message
+        'Return ex.Message
         'Finally
         dbConn.Dispose()
         'End Try
 
     End Function
 
-    Public Function GetDataKoleksiByIDDatabase(ID As Integer) As List(Of String)
+    Public Function GetDataJenisBarangByIDDatabase(ID As Integer) As List(Of String)
         Dim result As New List(Of String)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password= " + password + ";" + "database=" + database
         dbConn.Open()
@@ -121,7 +122,7 @@ Public Class JenisBarang
         Return result
     End Function
 
-    Public Function GetDataKoleksiDatabase() As DataTable
+    Public Function GetDataJenisBarangDatabase() As DataTable
         Dim result As New DataTable
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password= " + password + ";" + "database=" + database
@@ -141,7 +142,7 @@ Public Class JenisBarang
         Return result
     End Function
 
-    Public Function DeleteDataKoleksiByIDDatabase(ID As Integer)
+    Public Function DeleteDataJenisBarangByIDDatabase(ID As Integer)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password= " + password + ";" + "database=" + database
 

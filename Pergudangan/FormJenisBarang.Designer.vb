@@ -23,7 +23,7 @@ Partial Class FormJenisBarang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridViewJenisBarang = New System.Windows.Forms.DataGridView()
-        Me.ButtonShow = New System.Windows.Forms.Button()
+        Me.ButtonUbah = New System.Windows.Forms.Button()
         Me.ButtonTambah = New System.Windows.Forms.Button()
         Me.ButtonHapus = New System.Windows.Forms.Button()
         CType(Me.DataGridViewJenisBarang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,14 +39,14 @@ Partial Class FormJenisBarang
         Me.DataGridViewJenisBarang.Size = New System.Drawing.Size(673, 225)
         Me.DataGridViewJenisBarang.TabIndex = 0
         '
-        'ButtonShow
+        'ButtonUbah
         '
-        Me.ButtonShow.Location = New System.Drawing.Point(653, 569)
-        Me.ButtonShow.Name = "ButtonShow"
-        Me.ButtonShow.Size = New System.Drawing.Size(112, 34)
-        Me.ButtonShow.TabIndex = 1
-        Me.ButtonShow.Text = "Show"
-        Me.ButtonShow.UseVisualStyleBackColor = True
+        Me.ButtonUbah.Location = New System.Drawing.Point(653, 569)
+        Me.ButtonUbah.Name = "ButtonUbah"
+        Me.ButtonUbah.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonUbah.TabIndex = 1
+        Me.ButtonUbah.Text = "Ubah"
+        Me.ButtonUbah.UseVisualStyleBackColor = True
         '
         'ButtonTambah
         '
@@ -73,7 +73,7 @@ Partial Class FormJenisBarang
         Me.ClientSize = New System.Drawing.Size(968, 730)
         Me.Controls.Add(Me.ButtonHapus)
         Me.Controls.Add(Me.ButtonTambah)
-        Me.Controls.Add(Me.ButtonShow)
+        Me.Controls.Add(Me.ButtonUbah)
         Me.Controls.Add(Me.DataGridViewJenisBarang)
         Me.Name = "FormJenisBarang"
         Me.Text = "FormJenisBarang"
@@ -83,7 +83,7 @@ Partial Class FormJenisBarang
     End Sub
 
     Friend WithEvents DataGridViewJenisBarang As DataGridView
-    Friend WithEvents ButtonShow As Button
+    Friend WithEvents ButtonUbah As Button
     Friend WithEvents ButtonTambah As Button
     Friend WithEvents ButtonHapus As Button
 End Class
