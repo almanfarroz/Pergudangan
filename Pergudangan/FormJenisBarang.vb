@@ -31,11 +31,7 @@
     End Sub
 
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
-        If SelectedTableJenis Then
-            Dim hapus = New FormHapusJenisBarang()
-            hapus.Show()
-        Else
-            MessageBox.Show("Dipilih")
-        End If
+        Dim hapus = New FormHapusJenisBarang()
+        hapus.Show()
     End Sub
 End Class
