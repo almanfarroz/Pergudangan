@@ -17,5 +17,6 @@
 
         FormJenisBarang.JenisBarang.AddDataKoleksiDatabase(FormJenisBarang.JenisBarang.GSJenis_Barang,
                                                     FormJenisBarang.JenisBarang.GSSatuan)
+        Me.Close()
     End Sub
 End Class

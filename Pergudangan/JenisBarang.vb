@@ -130,9 +130,8 @@ Public Class JenisBarang
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_jenis_barang AS 'ID',
                                 jenis_barang AS 'Jenis Barang',
-                                satuan AS 'Satuan',
-                                FROM jenisbarang
-                                "
+                                satuan AS 'Satuan'
+                                FROM jenisbarang"
 
         sqlRead = sqlCommand.ExecuteReader
 

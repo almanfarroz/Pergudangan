@@ -1,7 +1,7 @@
 ﻿Public Class FormJenisBarang
     Public Shared JenisBarang As JenisBarang
     Public SelectedTableJenis As Integer = -1
-    Public SelectedTableJeniBarang As String
+    Public SelectedTableJenisBarang As String
 
     Public Sub New()
 
@@ -12,14 +12,15 @@
         JenisBarang = New JenisBarang()
         ReloadDataTableDatabase()
     End Sub
-    Private Sub DataGridViewJenisBarang_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
+    Private Sub DataGridViewJenisBarang_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewJenisBarang.CellClick
         'SelectedTableKoleksi = DataGridView1.CurrentRow.Index
         Dim index As Integer = e.RowIndex
         Dim selectedRow As DataGridViewRow
         selectedRow = DataGridViewJenisBarang.Rows(index)
 
         SelectedTableJenis = selectedRow.Cells(0).Value
-        SelectedTableJeniBarang = selectedRow.Cells(1).Value
+        SelectedTableJenisBarang = selectedRow.Cells(1).Value
     End Sub
     Public Sub ReloadDataTableDatabase()
         DataGridViewJenisBarang.DataSource = JenisBarang.GetDataKoleksiDatabase()
@@ -33,5 +34,9 @@
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
         Dim hapus = New FormHapusJenisBarang()
         hapus.Show()
+    End Sub
+
+    Private Sub FormJenisBarang_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        ReloadDataTableDatabase()
     End Sub
 End Class

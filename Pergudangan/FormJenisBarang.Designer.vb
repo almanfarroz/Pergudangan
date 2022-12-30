@@ -32,11 +32,11 @@ Partial Class FormJenisBarang
         'DataGridViewJenisBarang
         '
         Me.DataGridViewJenisBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewJenisBarang.Location = New System.Drawing.Point(218, 194)
+        Me.DataGridViewJenisBarang.Location = New System.Drawing.Point(138, 160)
         Me.DataGridViewJenisBarang.Name = "DataGridViewJenisBarang"
         Me.DataGridViewJenisBarang.RowHeadersWidth = 62
         Me.DataGridViewJenisBarang.RowTemplate.Height = 33
-        Me.DataGridViewJenisBarang.Size = New System.Drawing.Size(360, 225)
+        Me.DataGridViewJenisBarang.Size = New System.Drawing.Size(673, 225)
         Me.DataGridViewJenisBarang.TabIndex = 0
         '
         'ButtonShow
