@@ -22,9 +22,68 @@ Partial Class FormJenisBarang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.DataGridViewJenisBarang = New System.Windows.Forms.DataGridView()
+        Me.ButtonShow = New System.Windows.Forms.Button()
+        Me.ButtonTambah = New System.Windows.Forms.Button()
+        Me.ButtonHapus = New System.Windows.Forms.Button()
+        CType(Me.DataGridViewJenisBarang, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DataGridViewJenisBarang
+        '
+        Me.DataGridViewJenisBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewJenisBarang.Location = New System.Drawing.Point(218, 194)
+        Me.DataGridViewJenisBarang.Name = "DataGridViewJenisBarang"
+        Me.DataGridViewJenisBarang.RowHeadersWidth = 62
+        Me.DataGridViewJenisBarang.RowTemplate.Height = 33
+        Me.DataGridViewJenisBarang.Size = New System.Drawing.Size(360, 225)
+        Me.DataGridViewJenisBarang.TabIndex = 0
+        '
+        'ButtonShow
+        '
+        Me.ButtonShow.Location = New System.Drawing.Point(653, 569)
+        Me.ButtonShow.Name = "ButtonShow"
+        Me.ButtonShow.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonShow.TabIndex = 1
+        Me.ButtonShow.Text = "Show"
+        Me.ButtonShow.UseVisualStyleBackColor = True
+        '
+        'ButtonTambah
+        '
+        Me.ButtonTambah.Location = New System.Drawing.Point(535, 569)
+        Me.ButtonTambah.Name = "ButtonTambah"
+        Me.ButtonTambah.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonTambah.TabIndex = 2
+        Me.ButtonTambah.Text = "Tambah"
+        Me.ButtonTambah.UseVisualStyleBackColor = True
+        '
+        'ButtonHapus
+        '
+        Me.ButtonHapus.Location = New System.Drawing.Point(771, 569)
+        Me.ButtonHapus.Name = "ButtonHapus"
+        Me.ButtonHapus.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonHapus.TabIndex = 3
+        Me.ButtonHapus.Text = "Hapus"
+        Me.ButtonHapus.UseVisualStyleBackColor = True
+        '
+        'FormJenisBarang
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(968, 730)
+        Me.Controls.Add(Me.ButtonHapus)
+        Me.Controls.Add(Me.ButtonTambah)
+        Me.Controls.Add(Me.ButtonShow)
+        Me.Controls.Add(Me.DataGridViewJenisBarang)
+        Me.Name = "FormJenisBarang"
         Me.Text = "FormJenisBarang"
+        CType(Me.DataGridViewJenisBarang, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents DataGridViewJenisBarang As DataGridView
+    Friend WithEvents ButtonShow As Button
+    Friend WithEvents ButtonTambah As Button
+    Friend WithEvents ButtonHapus As Button
 End Class
