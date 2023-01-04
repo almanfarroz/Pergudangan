@@ -1,6 +1,4 @@
-﻿Imports Microsoft.Win32
-
-Public Class FormLogin
+﻿Public Class FormLogin
     Public Shared Users As New Users()
     Public Shared FormJenisBarang As FormJenisBarang
     Public Sub New()

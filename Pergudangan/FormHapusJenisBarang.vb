@@ -6,10 +6,10 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        LabelNama.Text = FormJenisBarang.SelectedTableJenisBarang
+        LabelNama.Text = FormLogin.FormJenisBarang.SelectedTableJenisBarang
     End Sub
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
-        FormJenisBarang.JenisBarang.DeleteDataJenisBarangByIDDatabase(FormJenisBarang.SelectedTableJenis)
+        FormLogin.FormJenisBarang.JenisBarang.DeleteDataJenisBarangByIDDatabase(FormLogin.FormJenisBarang.SelectedTableJenis)
         Me.Close()
     End Sub
 End Class

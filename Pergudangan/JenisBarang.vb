@@ -71,31 +71,33 @@ Public Class JenisBarang
         End Try
     End Function
 
-    Public Function UpdateDataJenisBarangByIdDatabase(id As Integer,
+    Public Function UpdateDataJenisBarangByIDDatabase(ID As Integer,
                                         jenis_barang As String,
                                         satuan As String)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password= " + password + ";" + "database=" + database
 
-        'Try
-        dbConn.Open()
-        sqlCommand.Connection = dbConn
-        sqlQuery = "UPDATE jenisbarang SET " &
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE jenisbarang SET " &
                     "jenis_barang='" & jenis_barang & "', " &
                     "satuan='" & satuan & "' " &
-                    "WHERE id_jenis_barang='" & id & "'"
-        Debug.Print(sqlQuery)
+                    "WHERE id_jenis_barang='" & ID & "'"
+            Debug.Print(sqlQuery)
 
-        sqlCommand = New MySqlCommand(sqlQuery, dbConn)
-        sqlRead = sqlCommand.ExecuteReader
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
 
-        sqlRead.Close()
-        dbConn.Close()
-        'Catch ex As Exception
-        'Return ex.Message
-        'Finally
-        dbConn.Dispose()
-        'End Try
+            sqlRead.Close()
+            dbConn.Close()
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+        MessageBox.Show(sqlQuery)
 
     End Function
 

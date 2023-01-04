@@ -1,6 +1,4 @@
-﻿Imports Microsoft.VisualBasic.Logging
-
-Public Class FormRegister
+﻿Public Class FormRegister
     Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles ButtonRegister.Click
         If (validateRegister()) Then
             FormLogin.Users.AddUsersDatabase(TextBoxUsername.Text, TextBoxEmail.Text, TextBoxPassword.Text)

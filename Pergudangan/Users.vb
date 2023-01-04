@@ -1,5 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.Security.Cryptography
+﻿Imports System.Security.Cryptography
+Imports MySql.Data.MySqlClient
 Public Class Users
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
