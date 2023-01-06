@@ -3,7 +3,8 @@
     Public Shared selectedDataBarang
     Public Shared selectedTableBarang
     Public Shared selectedTableBarangNama
-    Public Shared selectedIdBarang
+    Public selectedIdBarang As Integer
+    Public selectedJenisBarang As Integer
 
     Private barangDataTable As New ArrayList()
 
@@ -13,7 +14,7 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        ReloadDataTableDatabase()
     End Sub
 
     Private Sub FormBarang_Activated(sender As Object, e As EventArgs) Handles Me.Activated
@@ -33,6 +34,7 @@
     End Sub
 
     Private Sub ReloadDataTableDatabase()
+        Dim dataBarangDb = DataBarang.GetDataBarangDatabase()
         DataGridViewBarang.DataSource = DataBarang.GetDataBarangDatabase()
     End Sub
 
@@ -41,8 +43,8 @@
         Dim selectedRow As DataGridViewRow
         selectedRow = DataGridViewBarang.Rows(index)
 
-        selectedIdBarang = Int(selectedRow.Cells(0).Value)
-        selectedTableBarangNama = selectedRow.Cells(1).Value
+        selectedIdBarang = selectedRow.Cells(0).Value
+        selectedJenisBarang = selectedRow.Cells(1).Value
     End Sub
 
 
@@ -62,6 +64,8 @@
     End Sub
 
     Private Sub ButtonHapusBarang_Click(sender As Object, e As EventArgs) Handles ButtonHapusBarang.Click
+        Dim selectedBarang As List(Of String) = DataBarang.GetDataBarangByIdDatabase(selectedIdBarang)
+        selectedJenisBarang = selectedBarang(1)
         Dim FormHapus = New FormHapusBarang()
         FormHapus.show()
 

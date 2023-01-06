@@ -47,11 +47,11 @@ Public Class DataBarang
         End Set
     End Property
 
-    Public Property GSstock() As String
+    Public Property GSstock() As Integer
         Get
             Return stock
         End Get
-        Set(value As String)
+        Set(value As Integer)
             stock = value
         End Set
     End Property

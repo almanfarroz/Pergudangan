@@ -26,5 +26,7 @@
             FormBarang.DataBarang.GSbarang,
             FormBarang.DataBarang.GSstock)
 
+        Close()
+
     End Sub
 End Class
