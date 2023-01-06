@@ -1,6 +1,8 @@
 ﻿Public Class FormLogin
     Public Shared Users As New Users()
     Public Shared FormJenisBarang As FormJenisBarang
+    Public Shared MenuUtama As MenuUtama
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -9,6 +11,7 @@
         ' Add any initialization after the InitializeComponent() call.
         Users = New Users()
         FormJenisBarang = New FormJenisBarang()
+        MenuUtama = New MenuUtama()
     End Sub
     Private Sub ButtonRegister_Click(sender As Object, e As EventArgs) Handles ButtonRegister.Click
         Dim Register = New FormRegister()
@@ -23,7 +26,7 @@
 
         If authData.Count() > 0 Then
             Users.GSUsernameProperty = authData(1)
-            FormJenisBarang.Show()
+            MenuUtama.Show()
             Me.Hide()
         Else
             MessageBox.Show("Wrong Password")
