@@ -22,56 +22,56 @@ Partial Class FormMasukBarang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridViewBarangMasuk = New System.Windows.Forms.DataGridView()
+        Me.ButtonTambahBarang = New System.Windows.Forms.Button()
+        Me.ButtonHapusBarang = New System.Windows.Forms.Button()
+        CType(Me.DataGridViewBarangMasuk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridViewBarangMasuk
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 30)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(905, 304)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridViewBarangMasuk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewBarangMasuk.Location = New System.Drawing.Point(44, 30)
+        Me.DataGridViewBarangMasuk.Name = "DataGridViewBarangMasuk"
+        Me.DataGridViewBarangMasuk.RowHeadersWidth = 51
+        Me.DataGridViewBarangMasuk.RowTemplate.Height = 29
+        Me.DataGridViewBarangMasuk.Size = New System.Drawing.Size(905, 304)
+        Me.DataGridViewBarangMasuk.TabIndex = 0
         '
-        'Button1
+        'ButtonTambahBarang
         '
-        Me.Button1.Location = New System.Drawing.Point(283, 369)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(171, 39)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Tambah Barang"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonTambahBarang.Location = New System.Drawing.Point(283, 369)
+        Me.ButtonTambahBarang.Name = "ButtonTambahBarang"
+        Me.ButtonTambahBarang.Size = New System.Drawing.Size(171, 39)
+        Me.ButtonTambahBarang.TabIndex = 1
+        Me.ButtonTambahBarang.Text = "Tambah Barang"
+        Me.ButtonTambahBarang.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonHapusBarang
         '
-        Me.Button2.Location = New System.Drawing.Point(513, 369)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(171, 39)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Hapus Barang"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonHapusBarang.Location = New System.Drawing.Point(513, 369)
+        Me.ButtonHapusBarang.Name = "ButtonHapusBarang"
+        Me.ButtonHapusBarang.Size = New System.Drawing.Size(171, 39)
+        Me.ButtonHapusBarang.TabIndex = 2
+        Me.ButtonHapusBarang.Text = "Hapus Barang"
+        Me.ButtonHapusBarang.UseVisualStyleBackColor = True
         '
         'FormMasukBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1006, 462)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.ButtonHapusBarang)
+        Me.Controls.Add(Me.ButtonTambahBarang)
+        Me.Controls.Add(Me.DataGridViewBarangMasuk)
         Me.Name = "FormMasukBarang"
         Me.Text = "FormMasukBarang"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewBarangMasuk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents DataGridViewBarangMasuk As DataGridView
+    Friend WithEvents ButtonTambahBarang As Button
+    Friend WithEvents ButtonHapusBarang As Button
 End Class
