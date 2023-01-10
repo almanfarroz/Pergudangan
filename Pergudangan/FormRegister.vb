@@ -8,6 +8,7 @@
         End If
     End Sub
 
+
     Public Function validateRegister() As Boolean
         If (TextBoxUsername.Text <> "") Then
             If TextBoxPassword.Text = TextBoxConfirmPassword.Text And TextBoxPassword.Text <> "" Then
@@ -17,4 +18,5 @@
         End If
         Return False
     End Function
+
 End Class
