@@ -1,12 +1,9 @@
 ﻿Public Class FormBarang
     Public Shared DataBarang = New DataBarang
-    Public Shared selectedDataBarang
-    Public Shared selectedTableBarang
-    Public Shared selectedTableBarangNama
+
     Public selectedIdBarang As Integer
     Public selectedJenisBarang As Integer
-
-    Private barangDataTable As New ArrayList()
+    Public selectedBarang As String
 
     Public Sub New()
 
@@ -18,19 +15,8 @@
     End Sub
 
     Private Sub FormBarang_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        UpdateDataTableArrayList()
-        ReloadDataTableDatabase()
-    End Sub
 
-    Private Sub UpdateDataTableArrayList()
-        For Each rowBarang In DataBarang.getBarangDataTable()
-            Dim dataTable As String() = {
-                rowBarang(1),
-                rowBarang(2),
-                rowBarang(3)
-            }
-            DataGridViewBarang.Rows.Add(dataTable)
-        Next
+        ReloadDataTableDatabase()
     End Sub
 
     Private Sub ReloadDataTableDatabase()
@@ -45,6 +31,7 @@
 
         selectedIdBarang = selectedRow.Cells(0).Value
         selectedJenisBarang = selectedRow.Cells(1).Value
+        selectedBarang = selectedRow.Cells(2).Value
     End Sub
 
 
@@ -55,19 +42,17 @@
     Private Sub ButtonEditBarang_Click(sender As Object, e As EventArgs) Handles ButtonEditBarang.Click
         Dim selectedBarang As List(Of String) = DataBarang.GetDataBarangByIdDatabase(selectedIdBarang)
         DataBarang.GSidBarang = selectedIdBarang
-        DataBarang.GSidJenisBarang = selectedBarang(0)
-        DataBarang.GSbarang = selectedBarang(1)
-        DataBarang.GSstock = selectedBarang(2)
+        DataBarang.GSidJenisBarang = selectedBarang(1)
+        DataBarang.GSbarang = selectedBarang(2)
+        DataBarang.GSstock = selectedBarang(3)
 
         Dim FormEdit = New FormEditBarang()
         FormEdit.Show()
     End Sub
 
     Private Sub ButtonHapusBarang_Click(sender As Object, e As EventArgs) Handles ButtonHapusBarang.Click
-        Dim selectedBarang As List(Of String) = DataBarang.GetDataBarangByIdDatabase(selectedIdBarang)
-        selectedJenisBarang = selectedBarang(1)
         Dim FormHapus = New FormHapusBarang()
-        FormHapus.show()
+        FormHapus.Show()
 
     End Sub
 

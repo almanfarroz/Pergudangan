@@ -27,4 +27,15 @@
 
         End Try
     End Sub
+
+    Private Sub TextBoxStock_TextChanged(sender As Object, e As EventArgs) Handles TextBoxStock.TextChanged
+
+    End Sub
+
+    Private Sub TextBoxStock_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxStock.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = True
+            MessageBox.Show("Masukkan Angka!")
+        End If
+    End Sub
 End Class

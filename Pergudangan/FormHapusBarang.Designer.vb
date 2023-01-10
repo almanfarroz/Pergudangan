@@ -39,7 +39,7 @@ Partial Class FormHapusBarang
         '
         'ButtonFormHapus
         '
-        Me.ButtonFormHapus.Location = New System.Drawing.Point(169, 156)
+        Me.ButtonFormHapus.Location = New System.Drawing.Point(168, 124)
         Me.ButtonFormHapus.Name = "ButtonFormHapus"
         Me.ButtonFormHapus.Size = New System.Drawing.Size(99, 33)
         Me.ButtonFormHapus.TabIndex = 1
@@ -50,17 +50,18 @@ Partial Class FormHapusBarang
         '
         Me.LabelHapus.AutoSize = True
         Me.LabelHapus.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.LabelHapus.Location = New System.Drawing.Point(183, 82)
+        Me.LabelHapus.Location = New System.Drawing.Point(168, 65)
         Me.LabelHapus.Name = "LabelHapus"
         Me.LabelHapus.Size = New System.Drawing.Size(69, 28)
         Me.LabelHapus.TabIndex = 2
         Me.LabelHapus.Text = "Label2"
+        Me.LabelHapus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormHapusBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(455, 213)
+        Me.ClientSize = New System.Drawing.Size(455, 169)
         Me.Controls.Add(Me.LabelHapus)
         Me.Controls.Add(Me.ButtonFormHapus)
         Me.Controls.Add(Me.Label1)

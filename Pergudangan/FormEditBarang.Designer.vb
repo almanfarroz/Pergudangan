@@ -38,7 +38,7 @@ Partial Class FormEditBarang
         Me.ButtonTambahBarang.Name = "ButtonTambahBarang"
         Me.ButtonTambahBarang.Size = New System.Drawing.Size(157, 32)
         Me.ButtonTambahBarang.TabIndex = 17
-        Me.ButtonTambahBarang.Text = "Tambah Barang"
+        Me.ButtonTambahBarang.Text = "Edit Barang"
         Me.ButtonTambahBarang.UseVisualStyleBackColor = True
         '
         'ComboBoxIdJenisBarang

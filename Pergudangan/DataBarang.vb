@@ -1,7 +1,6 @@
-﻿Imports System.Runtime.CompilerServices
-Imports System.Security.Cryptography.X509Certificates
+﻿
 Imports System.Text
-Imports Google.Protobuf.WellKnownTypes
+
 Imports MySql.Data.MySqlClient
 Public Class DataBarang
     Private idBarang As Integer
@@ -56,42 +55,8 @@ Public Class DataBarang
         End Set
     End Property
 
-    Public Function AddBarangDataTable(idJenisBarang As Integer,
-                                        barang As String,
-                                        stock As Integer)
-        BarangDataTable.Add({idJenisBarang,
-                            barang,
-                            stock})
-    End Function
 
-    Public Function RemoveBarangDataTable(index As Integer)
-        BarangDataTable.RemoveAt(index)
-    End Function
 
-    Public ReadOnly Property getBarangDataTable() As ArrayList
-        Get
-            Return BarangDataTable
-        End Get
-    End Property
-
-    Public Function ConvertBarangToString(vals As List(Of String))
-        Dim builder As StringBuilder = New StringBuilder()
-        For Each val As String In vals
-            builder.Append(val).Append("|")
-        Next
-
-        'convert to string
-        Dim res = builder.ToString()
-        Return res
-    End Function
-
-    Public Function ConvertStringToKoleksi(value As String)
-        Dim arr() As String = value.Split("|")
-
-        'convert to list
-        Dim vals As List(Of String) = arr.ToList()
-        Return vals
-    End Function
 
     Public Function GetDataBarangDatabase() As DataTable
         Dim result As New DataTable
@@ -158,7 +123,7 @@ Public Class DataBarang
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT
-                                  id_jenis_barang,
+                                  id_barang,id_jenis_barang, 
                                   barang, stock FROM barang WHERE id_barang = '" & ID & "'"
         sqlRead = sqlCommand.ExecuteReader
 
@@ -166,6 +131,7 @@ Public Class DataBarang
             result.Add(sqlRead.GetString(0).ToString())
             result.Add(sqlRead.GetString(1).ToString())
             result.Add(sqlRead.GetString(2).ToString())
+            result.Add(sqlRead.GetString(3).ToString())
         End While
 
         sqlRead.Close()
@@ -202,21 +168,21 @@ Public Class DataBarang
         End Try
     End Function
 
-    Public Function DeleteDataBarangByIdDatabase(ID As Integer)
+    Public Function DeleteDataBarangByIdDatabase(Idbarang As Integer)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "DELETE FROM barang" & "WHERE id_barang = '" & ID & "' "
+            sqlQuery = "DELETE FROM barang WHERE id_barang = '" & Idbarang & "' "
             Debug.WriteLine(sqlQuery)
+
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
-            dbConn.Close()
 
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
-            Return ex
+            Return ex.Message
         Finally
             dbConn.Dispose()
         End Try
