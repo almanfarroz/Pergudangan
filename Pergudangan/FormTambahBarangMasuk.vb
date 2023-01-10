@@ -1,5 +1,7 @@
 ﻿Public Class FormTambahBarangMasuk
 
+    Public Shared ClassMasukBarang As ClassMasukBarang
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -8,8 +10,8 @@
         ' Add any initialization after the InitializeComponent() call.
         Dim DatabaseOrder = FormMasukBarang.ClassMasukBarang.GetOrderDatabase
         ComboBoxIdOrder.DataSource = DatabaseOrder
-        ComboBoxIdOrder.ValueMember = "id Order"
-        ComboBoxIdOrder.DisplayMember = "Order"
+        ComboBoxIdOrder.ValueMember = "ID Order"
+        ComboBoxIdOrder.DisplayMember = "Jumlah Order"
     End Sub
 
     Private Sub ButtonEnter_Click(sender As Object, e As EventArgs) Handles ButtonEnter.Click

@@ -80,9 +80,9 @@ Partial Class FormTambahBarangMasuk
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.Location = New System.Drawing.Point(25, 111)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 28)
+        Me.Label1.Size = New System.Drawing.Size(129, 28)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "ID Order"
+        Me.Label1.Text = "Jumlah Order"
         '
         'FormTambahBarangMasuk
         '

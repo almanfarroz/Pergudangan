@@ -70,8 +70,9 @@ Public Class ClassMasukBarang
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_barang_masuk AS 'ID Barang Masuk',
-                                         id_order AS 'ID Order',
-                                         jumlah_masuk AS 'Barang Masuk' FROM barang_masuk"
+                                         jumlah_order AS 'Jumlah Order',
+                                         jumlah_masuk AS 'Barang Masuk' FROM `barang_masuk` INNER JOIN `order` ON `barang_masuk`.id_order = `order`.id_order"
+
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
@@ -86,8 +87,7 @@ Public Class ClassMasukBarang
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero DateTime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_order AS 'ID Order',
-                                         jumlah_masuk AS 'Barang Masuk' FROM barang_masuk"
+        sqlCommand.CommandText = "SELECT id_order AS 'ID Order', jumlah_order AS 'Jumlah Order' FROM `order`"
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
@@ -102,7 +102,7 @@ Public Class ClassMasukBarang
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSER INTO barang_masuk(id_order, jumlah_masuk) VALUE ('" _
+            sqlQuery = "INSERT INTO barang_masuk(id_order, jumlah_masuk) VALUE ('" _
                         & idOrder & "','" _
                         & jumlahMasuk & "')"
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
@@ -144,7 +144,7 @@ Public Class ClassMasukBarang
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "DELETE FROM barang_masuk" & "WHERE id_barang_masuk = '" & ID & "' "
+            sqlQuery = "DELETE FROM barang_masuk WHERE id_barang_masuk = '" & ID.ToString & "'"
             Debug.WriteLine(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
