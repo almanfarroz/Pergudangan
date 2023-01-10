@@ -37,7 +37,7 @@ Namespace My
 
             Me.MainForm = FormLogin
 
-S
+
         End Sub
     End Class
 End Namespace

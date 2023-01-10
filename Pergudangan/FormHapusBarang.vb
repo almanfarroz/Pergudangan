@@ -5,12 +5,12 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        LabelHapus.Text() = FormBarang.selectedBarang
+        LabelHapus.Text() = FormLogin.MenuUtama.FormBarang.selectedBarang
 
     End Sub
 
     Private Sub ButtonFormHapus_Click(sender As Object, e As EventArgs) Handles ButtonFormHapus.Click
-        FormBarang.DataBarang.DeleteDataBarangByIdDatabase(FormBarang.selectedIdBarang)
+        FormLogin.MenuUtama.FormBarang.DataBarang.DeleteDataBarangByIdDatabase(FormLogin.MenuUtama.FormBarang.selectedIdBarang)
         Close()
     End Sub
 End Class
