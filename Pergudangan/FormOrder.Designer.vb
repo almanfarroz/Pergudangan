@@ -22,56 +22,68 @@ Partial Class FormOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ButtonTambah = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ButtonHapus = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridViewOrder = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonUpdateOrder = New System.Windows.Forms.Button()
+        CType(Me.DataGridViewOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ButtonTambah
+        'DataGridViewOrder
         '
-        Me.ButtonTambah.Location = New System.Drawing.Point(367, 282)
-        Me.ButtonTambah.Name = "ButtonTambah"
-        Me.ButtonTambah.Size = New System.Drawing.Size(123, 27)
-        Me.ButtonTambah.TabIndex = 0
-        Me.ButtonTambah.Text = "Tambah"
-        Me.ButtonTambah.UseVisualStyleBackColor = True
+        Me.DataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewOrder.Location = New System.Drawing.Point(12, 35)
+        Me.DataGridViewOrder.Name = "DataGridViewOrder"
+        Me.DataGridViewOrder.RowHeadersWidth = 51
+        Me.DataGridViewOrder.RowTemplate.Height = 29
+        Me.DataGridViewOrder.Size = New System.Drawing.Size(776, 188)
+        Me.DataGridViewOrder.TabIndex = 0
         '
-        'DataGridView1
+        'Button1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 29
-        Me.DataGridView1.Size = New System.Drawing.Size(607, 264)
-        Me.DataGridView1.TabIndex = 1
+        Me.Button1.Location = New System.Drawing.Point(12, 229)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 29)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Add"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'ButtonHapus
+        'Button2
         '
-        Me.ButtonHapus.Location = New System.Drawing.Point(496, 282)
-        Me.ButtonHapus.Name = "ButtonHapus"
-        Me.ButtonHapus.Size = New System.Drawing.Size(123, 27)
-        Me.ButtonHapus.TabIndex = 2
-        Me.ButtonHapus.Text = "Hapus"
-        Me.ButtonHapus.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(112, 229)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(94, 29)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Delete"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ButtonUpdateOrder
+        '
+        Me.ButtonUpdateOrder.Location = New System.Drawing.Point(212, 229)
+        Me.ButtonUpdateOrder.Name = "ButtonUpdateOrder"
+        Me.ButtonUpdateOrder.Size = New System.Drawing.Size(94, 29)
+        Me.ButtonUpdateOrder.TabIndex = 3
+        Me.ButtonUpdateOrder.Text = "Update"
+        Me.ButtonUpdateOrder.UseVisualStyleBackColor = True
         '
         'FormOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(994, 525)
-        Me.Controls.Add(Me.ButtonHapus)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.ButtonTambah)
+        Me.ClientSize = New System.Drawing.Size(800, 278)
+        Me.Controls.Add(Me.ButtonUpdateOrder)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.DataGridViewOrder)
         Me.Name = "FormOrder"
         Me.Text = "FormOrder"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewOrder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ButtonTambah As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ButtonHapus As Button
+    Friend WithEvents DataGridViewOrder As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonUpdateOrder As Button
 End Class

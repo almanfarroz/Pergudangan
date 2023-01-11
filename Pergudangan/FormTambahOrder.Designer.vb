@@ -30,6 +30,7 @@ Partial Class FormTambahOrder
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -92,18 +93,27 @@ Partial Class FormTambahOrder
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(417, 323)
+        Me.Button1.Location = New System.Drawing.Point(522, 253)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(267, 76)
+        Me.Button1.Size = New System.Drawing.Size(136, 38)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(408, 180)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(250, 28)
+        Me.ComboBox2.TabIndex = 16
         '
         'FormTambahOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(776, 353)
+        Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox1)
@@ -127,4 +137,5 @@ Partial Class FormTambahOrder
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents ComboBox2 As ComboBox
 End Class
