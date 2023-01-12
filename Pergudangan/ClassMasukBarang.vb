@@ -70,8 +70,30 @@ Public Class ClassMasukBarang
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id_barang_masuk AS 'ID Barang Masuk',
+                                         `order`.id_order AS 'ID Order',
                                          jumlah_order AS 'Jumlah Order',
-                                         jumlah_masuk AS 'Barang Masuk' FROM `barang_masuk` INNER JOIN `order` ON `barang_masuk`.id_order = `order`.id_order"
+                                         jumlah_masuk AS 'Barang Masuk',
+                                         `order`.status AS 'Status' FROM `barang_masuk` INNER JOIN `order` ON `barang_masuk`.id_order = `order`.id_order"
+
+        sqlRead = sqlCommand.ExecuteReader
+
+        result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
+    Public Function GetBarangMasukDatabaseByIdOrder(idOrder As Integer) As DataTable
+        Dim result As New DataTable
+
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero DateTime=True"
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id_barang_masuk AS 'ID Barang Masuk',
+                                         `order`.id_order AS 'ID Order',
+                                         jumlah_order AS 'Jumlah Order',
+                                         jumlah_masuk AS 'Barang Masuk',
+                                         `order`.status AS 'Status' FROM `barang_masuk` INNER JOIN `order` ON `barang_masuk`.id_order = `order`.id_order WHERE `order`.id_order = '" & idOrder & "'"
 
         sqlRead = sqlCommand.ExecuteReader
 
@@ -87,7 +109,22 @@ Public Class ClassMasukBarang
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero DateTime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_order AS 'ID Order', jumlah_order AS 'Jumlah Order' FROM `order`"
+        sqlCommand.CommandText = "SELECT id_order AS 'ID Order', jumlah_order AS 'Jumlah Order', status AS 'Status' FROM `order` WHERE status = '1'"
+        sqlRead = sqlCommand.ExecuteReader
+
+        result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
+    Public Function GetOrderDatabaseById(idOrder As Integer) As DataTable
+        Dim result As New DataTable
+
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero DateTime=True"
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT id_order AS 'ID Order', jumlah_order AS 'Jumlah Order' FROM `order` WHERE id_order = '" & idOrder & "'"
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
@@ -116,6 +153,31 @@ Public Class ClassMasukBarang
         Finally
             dbConn.Dispose()
         End Try
+
+        Dim dataMasuk = GetBarangMasukDatabaseByIdOrder(idOrder).Rows
+        Dim totalMasuk As Integer = 0
+        Dim orderMasuk As Integer = Int(dataMasuk(0)(2))
+        For Each row In dataMasuk
+            totalMasuk += Int(row(3))
+            If (totalMasuk >= orderMasuk) Then
+                dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
+                Try
+                    dbConn.Open()
+                    sqlCommand.Connection = dbConn
+                    sqlQuery = "UPDATE `order` SET status = '0' WHERE id_order = '" & idOrder & "'"
+                    sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+                    sqlRead = sqlCommand.ExecuteReader
+                    dbConn.Close()
+
+                    sqlRead.Close()
+                    dbConn.Close()
+                Catch ex As Exception
+                    Return ex.Message
+                Finally
+                    dbConn.Dispose()
+                End Try
+            End If
+        Next
 
     End Function
 
