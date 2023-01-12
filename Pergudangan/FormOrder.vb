@@ -1,8 +1,7 @@
 ﻿Public Class FormOrder
-    Public Shared DataOrder = New DataOrder
+    Public Shared DataOrder As New DataOrder
 
     Public selectedIdOrder As Integer
-    Public selectedJenisBarang As Integer
     Public selectedOrder As String
 
 
@@ -12,17 +11,16 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        DataOrder = New DataOrder()
     End Sub
 
     Private Sub FormOrder_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-
         ReloadDataTableDatabase()
     End Sub
 
     Private Sub ReloadDataTableDatabase()
         Dim dataOrderDb = DataOrder.GetDataOrderDatabase()
-        DataGridViewOrder.DataSource = DataOrder.GetDataBarangDatabase()
+        DataGridViewOrder.DataSource = dataOrderDb
     End Sub
 
     Private Sub DataGridViewOrder_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewOrder.CellClick
@@ -31,35 +29,17 @@
         selectedRow = DataGridViewOrder.Rows(index)
 
         selectedIdOrder = selectedRow.Cells(0).Value
-        selectedJenisOrder = selectedRow.Cells(1).Value
         selectedOrder = selectedRow.Cells(2).Value
     End Sub
 
 
-    Private Sub ButtonTambahBarang_Click(sender As Object, e As EventArgs) Handles ButtonTambahBarang.Click
+    Private Sub ButtonTambahBarang_Click(sender As Object, e As EventArgs) Handles ButtonAddOrder.Click
+        Dim FormTambah = New FormTambahOrder()
         FormTambahOrder.Show()
     End Sub
 
-    Private Sub ButtonUpdateOrder_Click(sender As Object, e As EventArgs) Handles ButtonUpdateOrder.Click
-        Dim selectedBarang As List(Of String) = DataOrder.GetDataOrderByIdDatabase(selectedIdOrder)
-        DataOrder.GSidBarang = selectedIdOrder
-        DataOrder.GSidJenisBarang = selectedBarang(1)
-        DataOrder.GSbarang = selectedBarang(2)
-        DataOrder.GSstock = selectedBarang(3)
-
-        Dim FormUpdate = New FormUpdateOrder()
-        FormEdit.Show()
-    End Sub
-
-    Private Sub ButtonHapusBarang_Click(sender As Object, e As EventArgs) Handles ButtonHapusBarang.Click
-        Dim FormHapus = New FormHapusBarang()
+    Private Sub ButtonHapusBarang_Click(sender As Object, e As EventArgs) Handles ButtonDeleteOrder.Click
+        Dim FormHapus = New FormDeleteOrder()
         FormHapus.Show()
-
     End Sub
-
-    Private Sub FormBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-End Class
 End Class

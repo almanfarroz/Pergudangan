@@ -2,13 +2,12 @@
 
 Imports MySql.Data.MySqlClient
 Public Class DataOrder
-    Private idBarang As Integer
     Private idOrder As Integer
+    Private idBarang As Integer
     Private tanggal_order As Date
     Private jumlah_order As Integer
     Private status As Boolean
 
-    Private OrderDataTable As New ArrayList()
 
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
@@ -71,11 +70,12 @@ Public Class DataOrder
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_barang AS 'ID Barang',
+        sqlCommand.CommandText = "SELECT 
                                   id_order AS 'id Order',
+                                  id_barang AS 'ID Barang',
                                   tanggal_order AS 'Tanggal Order',
                                   jumlah_order AS 'Jumlah Order',
-                                  status AS 'STATUS', FROM Order"
+                                  status AS 'STATUS' FROM `order`"
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
@@ -104,28 +104,25 @@ Public Class DataOrder
 
     Public Function AddDataOrderDatabase(idBarang As Integer,
                                           tanggal_order As Date,
-                                          jumlah_order As Integer,
-                                          status As Boolean)
+                                          jumlah_order As Integer)
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO order(idbarang, tanggal_order, jumlah_order, status) VALUE('" _
-                        & idBarang & "','" _
-                        & tanggal_order & "','" _
-                        & jumlah_order & "','" _
-                        & status & "')"
+            sqlQuery = "INSERT INTO `order`(id_barang, tanggal_order, jumlah_order, status) VALUE('" _
+                            & idBarang & "','" _
+                            & tanggal_order.ToString("yyyy-MM-dd") & "','" _
+                            & jumlah_order & "','" _
+                            & 1 & "')"
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
-
             sqlRead.Close()
             dbConn.Close()
         Catch ex As Exception
             Return ex.Message
         Finally
             dbConn.Dispose()
-
         End Try
     End Function
 
@@ -144,7 +141,6 @@ Public Class DataOrder
                         "jumlah_order= '" & jumlah_order & "',  " &
                         "status= '" & status & "' " &
                         "WHERE id_Order = '" & idOrder & "'"
-            Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
@@ -165,9 +161,7 @@ Public Class DataOrder
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "DELETE FROM order WHERE id_order = '" & IdOrder & "' "
-            Debug.WriteLine(sqlQuery)
-
+            sqlQuery = "DELETE FROM `order` WHERE id_order = '" & IdOrder & "' "
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
 
@@ -180,24 +174,4 @@ Public Class DataOrder
         End Try
     End Function
 
-    Public Function GetDataBarangByIdDatabase(ID As Integer) As List(Of String)
-        Dim result As New List(Of String)
-
-        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime = " + "True" + ";" + "Allow Zero Datetime = " + "True"
-        dbConn.Open()
-        sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT
-                                  id_barang 
-                                  barang FROM barang WHERE id_barang = '" & ID & "'"
-        sqlRead = sqlCommand.ExecuteReader
-
-        While sqlRead.Read
-            result.Add(sqlRead.GetString(0).ToString())
-            result.Add(sqlRead.GetString(1).ToString())
-        End While
-
-        sqlRead.Close()
-        dbConn.Close()
-        Return result
-    End Function
 End Class
