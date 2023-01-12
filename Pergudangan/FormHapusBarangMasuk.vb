@@ -1,4 +1,4 @@
-﻿Public Class FormHapusJenisBarang
+﻿Public Class FormHapusBarangMasuk
 
     Public Sub New()
 
@@ -6,10 +6,11 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        LabelNama.Text = FormLogin.MenuUtama.FormJenisBarang.SelectedTableJenisBarang
+        LabelHapus.Text() = FormLogin.MenuUtama.FormMasukBarang.selectedIdBarangMasuk
     End Sub
     Private Sub ButtonHapus_Click(sender As Object, e As EventArgs) Handles ButtonHapus.Click
-        FormLogin.MenuUtama.FormJenisBarang.JenisBarang.DeleteDataJenisBarangByIDDatabase(FormLogin.MenuUtama.FormJenisBarang.SelectedTableJenis)
-        Me.Close()
+        FormLogin.MenuUtama.FormMasukBarang.ClassMasukBarang.DeleteBarangMasukByIdDatabase(FormLogin.MenuUtama.FormMasukBarang.selectedIdBarangMasuk)
+
+        Close()
     End Sub
 End Class

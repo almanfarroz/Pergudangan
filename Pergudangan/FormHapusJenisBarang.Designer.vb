@@ -29,7 +29,7 @@ Partial Class FormHapusJenisBarang
         '
         'ButtonHapus
         '
-        Me.ButtonHapus.Location = New System.Drawing.Point(312, 297)
+        Me.ButtonHapus.Location = New System.Drawing.Point(312, 335)
         Me.ButtonHapus.Name = "ButtonHapus"
         Me.ButtonHapus.Size = New System.Drawing.Size(112, 34)
         Me.ButtonHapus.TabIndex = 0
