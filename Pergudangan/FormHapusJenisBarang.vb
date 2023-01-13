@@ -12,4 +12,8 @@
         FormLogin.MenuUtama.FormJenisBarang.JenisBarang.DeleteDataJenisBarangByIDDatabase(FormLogin.MenuUtama.FormJenisBarang.SelectedTableJenis)
         Me.Close()
     End Sub
+
+    Private Sub ButtonTutup_Click(sender As Object, e As EventArgs) Handles ButtonTutup.Click
+        Me.Close()
+    End Sub
 End Class

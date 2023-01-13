@@ -5,7 +5,7 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        LabelOrder.Text = FormOrder.selectedOrder
+        LabelOrder.Text = FormLogin.MenuUtama.FormOrder.selectedOrder
     End Sub
 
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
@@ -13,7 +13,7 @@
     End Sub
 
     Private Sub ButtonHapusOrder_Click(sender As Object, e As EventArgs) Handles ButtonHapusOrder.Click
-        FormOrder.DataOrder.DeleteDataOrderByIdDatabase(FormOrder.selectedIdOrder)
+        FormLogin.MenuUtama.FormOrder.DataOrder.DeleteDataOrderByIdDatabase(FormLogin.MenuUtama.FormOrder.selectedIdOrder)
         MessageBox.Show("Berhasil dihapus!")
         Close()
     End Sub

@@ -25,11 +25,12 @@ Partial Class FormHapusJenisBarang
         Me.ButtonHapus = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LabelNama = New System.Windows.Forms.Label()
+        Me.ButtonTutup = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ButtonHapus
         '
-        Me.ButtonHapus.Location = New System.Drawing.Point(312, 335)
+        Me.ButtonHapus.Location = New System.Drawing.Point(226, 333)
         Me.ButtonHapus.Name = "ButtonHapus"
         Me.ButtonHapus.Size = New System.Drawing.Size(112, 34)
         Me.ButtonHapus.TabIndex = 0
@@ -56,11 +57,21 @@ Partial Class FormHapusJenisBarang
         Me.LabelNama.TabIndex = 2
         Me.LabelNama.Text = "Label2"
         '
+        'ButtonTutup
+        '
+        Me.ButtonTutup.Location = New System.Drawing.Point(403, 333)
+        Me.ButtonTutup.Name = "ButtonTutup"
+        Me.ButtonTutup.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonTutup.TabIndex = 3
+        Me.ButtonTutup.Text = "Tutup"
+        Me.ButtonTutup.UseVisualStyleBackColor = True
+        '
         'FormHapusJenisBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ButtonTutup)
         Me.Controls.Add(Me.LabelNama)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonHapus)
@@ -74,4 +85,5 @@ Partial Class FormHapusJenisBarang
     Friend WithEvents ButtonHapus As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents LabelNama As Label
+    Friend WithEvents ButtonTutup As Button
 End Class
