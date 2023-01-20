@@ -22,15 +22,14 @@ Partial Class FormRegister
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-
         Me.TextBoxUsername = New System.Windows.Forms.TextBox()
         Me.TextBoxEmail = New System.Windows.Forms.TextBox()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.TextBoxConfirmPassword = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LabelUsername = New System.Windows.Forms.Label()
+        Me.LabelEmail = New System.Windows.Forms.Label()
+        Me.LabelPassword = New System.Windows.Forms.Label()
+        Me.LabelConfirmPassword = New System.Windows.Forms.Label()
         Me.ButtonRegister = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -62,41 +61,41 @@ Partial Class FormRegister
         Me.TextBoxConfirmPassword.Size = New System.Drawing.Size(239, 31)
         Me.TextBoxConfirmPassword.TabIndex = 3
         '
-        'Label1
+        'LabelUsername
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(293, 100)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 25)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Username"
+        Me.LabelUsername.AutoSize = True
+        Me.LabelUsername.Location = New System.Drawing.Point(293, 100)
+        Me.LabelUsername.Name = "LabelUsername"
+        Me.LabelUsername.Size = New System.Drawing.Size(91, 25)
+        Me.LabelUsername.TabIndex = 4
+        Me.LabelUsername.Text = "Username"
         '
-        'Label2
+        'LabelEmail
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(293, 171)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 25)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Email"
+        Me.LabelEmail.AutoSize = True
+        Me.LabelEmail.Location = New System.Drawing.Point(293, 171)
+        Me.LabelEmail.Name = "LabelEmail"
+        Me.LabelEmail.Size = New System.Drawing.Size(54, 25)
+        Me.LabelEmail.TabIndex = 5
+        Me.LabelEmail.Text = "Email"
         '
-        'Label3
+        'LabelPassword
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(293, 243)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 25)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Password"
+        Me.LabelPassword.AutoSize = True
+        Me.LabelPassword.Location = New System.Drawing.Point(293, 243)
+        Me.LabelPassword.Name = "LabelPassword"
+        Me.LabelPassword.Size = New System.Drawing.Size(87, 25)
+        Me.LabelPassword.TabIndex = 6
+        Me.LabelPassword.Text = "Password"
         '
-        'Label4
+        'LabelConfirmPassword
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(293, 316)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 25)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Confirm Password"
+        Me.LabelConfirmPassword.AutoSize = True
+        Me.LabelConfirmPassword.Location = New System.Drawing.Point(293, 316)
+        Me.LabelConfirmPassword.Name = "LabelConfirmPassword"
+        Me.LabelConfirmPassword.Size = New System.Drawing.Size(156, 25)
+        Me.LabelConfirmPassword.TabIndex = 7
+        Me.LabelConfirmPassword.Text = "Confirm Password"
         '
         'ButtonRegister
         '
@@ -113,10 +112,10 @@ Partial Class FormRegister
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 513)
         Me.Controls.Add(Me.ButtonRegister)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LabelConfirmPassword)
+        Me.Controls.Add(Me.LabelPassword)
+        Me.Controls.Add(Me.LabelEmail)
+        Me.Controls.Add(Me.LabelUsername)
         Me.Controls.Add(Me.TextBoxConfirmPassword)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.TextBoxEmail)
@@ -126,16 +125,15 @@ Partial Class FormRegister
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
-
     End Sub
 
     Friend WithEvents TextBoxUsername As TextBox
     Friend WithEvents TextBoxEmail As TextBox
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents TextBoxConfirmPassword As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
+    Friend WithEvents LabelUsername As Label
+    Friend WithEvents LabelEmail As Label
+    Friend WithEvents LabelPassword As Label
+    Friend WithEvents LabelConfirmPassword As Label
     Friend WithEvents ButtonRegister As Button
 End Class

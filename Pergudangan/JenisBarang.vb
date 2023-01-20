@@ -97,7 +97,6 @@ Public Class JenisBarang
         Finally
             dbConn.Dispose()
         End Try
-        MessageBox.Show(sqlQuery)
 
     End Function
 
