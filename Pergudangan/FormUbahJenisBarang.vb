@@ -8,19 +8,23 @@
 
         ' Add any initialization after the InitializeComponent() call.
         ComboBoxSatuan.DataSource = satuan
-        Dim JenisBarang = FormJenisBarang.JenisBarang
-        TextBoxJenisBarang.Text = FormJenisBarang.JenisBarang.GSJenis_Barang
-        ComboBoxSatuan.SelectedItem() = FormJenisBarang.JenisBarang.GSSatuan
+        Dim JenisBarang = FormLogin.MenuUtama.FormJenisBarang.JenisBarang
+        TextBoxJenisBarang.Text = FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSJenis_Barang
+        ComboBoxSatuan.SelectedItem() = FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSSatuan
     End Sub
 
     Private Sub ButtonUbah_Click(sender As Object, e As EventArgs) Handles ButtonUbah.Click
-        FormJenisBarang.JenisBarang.GSJenis_Barang = TextBoxJenisBarang.Text
-        FormJenisBarang.JenisBarang.GSSatuan = ComboBoxSatuan.SelectedItem()
+        FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSJenis_Barang = TextBoxJenisBarang.Text
+        FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSSatuan = ComboBoxSatuan.SelectedItem()
 
-        FormJenisBarang.JenisBarang.UpdateDataJenisBarangByIdDatabase(FormJenisBarang.SelectedTableJenis,
-                                                                      FormJenisBarang.JenisBarang.GSJenis_Barang,
-                                                                      FormJenisBarang.JenisBarang.GSSatuan)
+        FormLogin.MenuUtama.FormJenisBarang.JenisBarang.UpdateDataJenisBarangByIDDatabase(FormLogin.MenuUtama.FormJenisBarang.SelectedTableJenis,
+                                                                      FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSJenis_Barang,
+                                                                      FormLogin.MenuUtama.FormJenisBarang.JenisBarang.GSSatuan)
 
         Me.Close()
+    End Sub
+
+    Private Sub FormUbahJenisBarang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
